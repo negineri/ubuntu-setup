@@ -2,6 +2,11 @@
 
 自分用ubuntu初期設定ansible
 
+```
+sudo docker run --rm --net=host -v $SSH_AUTH_SOCK:/tmp/ssh-agent.sock -e SSH_AUTH_SOCK="/tmp/ssh-agent.s
+ock" ubuntu-setup アドレス negineri $(systemd-ask-password)
+```
+
 ## 使い方
 設定対象として任意のユーザーでsshができるubuntu20.04を想定しています
 
