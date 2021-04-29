@@ -4,6 +4,7 @@
   blockinfile:
     path: ~/.bashrc
     insertafter: EOF
+    create: yes
     #marker: "# {mark} ANSIBLE MANAGED BLOCK"
     block: |
       export EDITOR=vim
@@ -17,6 +18,7 @@
   blockinfile:
     path: ~/.vimrc
     insertbefore: BOF
+    create: yes
     marker: "\" {mark} ANSIBLE MANAGED BLOCK"
     block: "{{item}}"
   with_file:
