@@ -1,0 +1,11 @@
+---
+
+- name: add tmux.conf
+  blockinfile:
+    path: ~/.tmux.conf
+    insertafter: EOF
+    create: yes
+    #marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    block: "{{item}}"
+  with_file:
+    - files/.tmux.conf
