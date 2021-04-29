@@ -1,0 +1,14 @@
+---
+
+- name: vim config
+  hosts: all
+  #become: true
+  roles:
+    - role: vim
+      tags: vim
+
+- name: tmux config
+  hosts: all
+  roles:
+    - role: tmux
+      tags: tmux

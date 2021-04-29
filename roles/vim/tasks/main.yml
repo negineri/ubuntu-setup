@@ -1,0 +1,36 @@
+---
+
+- name: add env EDITOR
+  blockinfile:
+    path: ~/.bashrc
+    insertafter: EOF
+    #marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    block: |
+      export EDITOR=vim
+
+- name: download Vundle
+  ansible.builtin.git:
+    repo: https://github.com/VundleVim/Vundle.vim.git
+    dest: ~/.vim/bundle/Vundle.vim
+    bare: yes
+
+- name: config Vundle
+  blockinfile:
+    path: ~/.vimrc
+    insertbefore: BOF
+    marker: "\" {mark} ANSIBLE MANAGED BLOCK"
+    block: "{{item}}"
+  with_file:
+    - files/vundle.vimrc
+
+- name: install plugins
+  command: "vim +PluginInstall +qall"
+
+- name: add .vimrc
+  blockinfile:
+    path: ~/.vimrc
+    insertafter: EOF
+    marker: "\" {mark} ANSIBLE MANAGED BLOCK"
+    block: "{{item}}"
+  with_file:
+    - files/.vimrc
