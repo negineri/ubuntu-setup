@@ -3,3 +3,4 @@
 
 req_packages:
   - git
+  - vim
