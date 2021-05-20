@@ -1,0 +1,5 @@
+---
+# vars file for apt
+
+req_packages:
+  - git

@@ -1,5 +1,12 @@
 ---
 
+- name: apt install tools
+  hosts: all
+  become: true
+  roles:
+    - role: apt
+      tags: apt
+
 - name: vim config
   hosts: all
   #become: true

@@ -1,0 +1,8 @@
+---
+
+- name: apt install tools
+  apt:
+    update_cache: yes
+    name: "{{ req_packages }}"
+    state: present
+  become: true
