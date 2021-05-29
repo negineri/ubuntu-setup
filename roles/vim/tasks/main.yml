@@ -2,7 +2,7 @@
 
 - name: add env EDITOR
   blockinfile:
-    path: ~/.bashrc
+    path: ~/.profile
     insertafter: EOF
     create: yes
     #marker: "# {mark} ANSIBLE MANAGED BLOCK"
